@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class='col-md-3'>
+            <form (ngSubmit)="tdFormData(tdForm)" #tdForm='ngForm'>
+                <div class="mb-3 ">
+                    <label for="name" class="form-label ">*First Name</label>
+                    <!-- <input type="text" class="form-control " aria-describedby="firstName " name='fName' ngModel> -->
+                    <input type="text" class="form-control " aria-describedby="firstName " pattern="[a-zA-Z][a-zA-Z ]+" name='fName' #fName="ngModel" ngModel required>
+                    <small class='errors' *ngIf='fName.touched && fName.invalid '>* Required
+                    </small>
+                    <small class="errors" *ngIf="fName?.errors?.['pattern']">only Alphabats allowed</small>
+                </div>
+                <div class="mb-3 ">
+                    <label for="name" class="form-label ">*Last Name</label>
+                    <!-- <input type="text" class="form-control" aria-describedby="LastName " name='lName' ngModel> -->
+                    <input type="text" class="form-control" aria-describedby="LastName " pattern="[a-zA-Z][a-zA-Z ]+" #lastName="ngModel" name='lName' ngModel required>
+                    <small class='errors' *ngIf='lastName?.touched && lastName?.invalid'>* Required</small>
+                    <small class="errors" *ngIf="lastName?.errors?.['pattern']">only Alphabats allowed</small>
+
+                </div>
+                <div class="mb-3 ">
+                    <label for="date" class="form-label ">*Date Of Birth</label>
+                    <!-- <input type="date" class="form-control " aria-describedby="date " name='date' ngModel> -->
+                    <input type="date" class="form-control " aria-describedby="date " #date="ngModel" name='date' ngModel required>
+                    <small class='errors' *ngIf='date?.touched && date?.invalid'>* Required</small>
+                </div>
+                <div class="mb-3 ">
+                    <label for="email " class="form-label ">*Email Address</label>
+                    <!-- <input type="email" class="form-control " aria-describedby="emailHelp " name='email' ngModel email> -->
+                    <input type="email" class="form-control " aria-describedby="emailHelp " #email="ngModel" name='email' ngModel email>
+                    <small class='errors' *ngIf="email?.invalid && email?.touched">
+                      <p>* email is not correct</p>
+                    </small>
+                </div>
+                <button class="btn btn-primary ">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

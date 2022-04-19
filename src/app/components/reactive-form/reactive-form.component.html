@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class='col-md-3'>
+            <form [formGroup]="reactiveForm" (ngSubmit)="reactiveFormData()">
+                <div class="mb-3 ">
+                    <label for="name " class="form-label ">First Name</label>
+                    <input type="text " formControlName="fname" class="form-control " aria-describedby="firstName ">
+                </div>
+                <div>
+                    <p class='errors'>{{fnameErros()}}</p>
+                </div>
+                <div class="mb-3 ">
+                    <label for="name " class="form-label ">Last Name</label>
+                    <input type="text " formControlName="lname" class="form-control " aria-describedby="LastName ">
+                </div>
+                <div>
+                    <p class='errors'>{{lnameErros()}}</p>
+                </div>
+                <div class="mb-3 ">
+                    <label for="date " class="form-label ">Date Of Birth</label>
+                    <input type="date" formControlName="bod" class="form-control " aria-describedby="date ">
+                </div>
+                <div>
+                    <p class='errors'>{{bodErros()}}</p>
+                </div>
+                <div class="mb-3 ">
+                    <label for="email " class="form-label ">Email Address</label>
+                    <input type="email " formControlName="email" class="form-control " aria-describedby="emailHelp ">
+                </div>
+                <div>
+                    <p class='errors'>{{emailErros()}}</p>
+                </div>
+                <button type="button " class="btn btn-primary ">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

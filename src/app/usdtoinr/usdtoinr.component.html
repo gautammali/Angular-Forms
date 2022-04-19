@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="col-md-6">
+        <label for="">Enter your amount in the USD</label>
+        <br>
+        <input type="number" class="form-text" [(ngModel)]='usd'>
+        <h3>
+            (₹) {{usd|currencyTransfer}}
+        </h3>
+    </div>
+</div>
